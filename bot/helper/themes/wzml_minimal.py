@@ -174,53 +174,53 @@ class WZMLStyle:
 
     # def get_readable_message(): ---> bot_utilis.py
     ####--------OVERALL MSG HEADER----------
-    STATUS_NAME =       '<b><i>{Name}</i></b>'
+    STATUS_NAME =       '<b>✓ ғɪʟᴇ ɴᴀᴍᴇ</b> : <code>{Name}</code>\n'
 
     #####---------PROGRESSIVE STATUS-------
-    BAR =               '\n⇢ {Bar}'
-    PROCESSED =         '\n↦ <b>Processed:</b> {Processed}'
-    STATUS =            '\n↦ <b>Status:</b> <a href="{Url}">{Status}</a>'
-    ETA =                                                ' | <b>ETA:</b> {Eta}'
-    SPEED =             '\n↦ <b>Speed:</b> {Speed}'
-    ELAPSED =                                     ' | <b>Elapsed:</b> {Elapsed}'
-    ENGINE =            '\n↦ <b>Engine:</b> {Engine}'
-    STA_MODE =          '\n↦ <b>Mode:</b> {Mode}'
-    SEEDERS =           '\n↦ <b>Seeders:</b> {Seeders} | '
-    LEECHERS =                                           '<b>Leechers:</b> {Leechers}'
+    BAR =               '\n<b>» <a href="https://t.me/Hari_OP">{Bar}</a></b>'
+    PROCESSED =         '\n<b>» ᴘʀᴏᴄᴇssᴇᴅ :</b> <code>{Processed}</code>'
+    STATUS =            '\n<b>» sᴛᴀᴛᴜs :</b> <b><a href="{Url}">{Status}</a></b>'
+    ETA =                                                ' | <b>ᴇᴛᴀ :</b> <code>{Eta}</code>'
+    SPEED =             '\n<b>» sᴘᴇᴇᴅ :</b> <code>{Speed}</code>'
+    ELAPSED =                                     ' | <b>ᴇʟᴀᴘsᴇᴅ :</b> <code>{Elapsed}</code>'
+    ENGINE =            '\n<b>» ᴇɴɢɪɴᴇ :</b> <code>{Engine}</code>'
+    STA_MODE =          '\n<b>» ᴍᴏᴅᴇ :</b> <code>{Mode}</code>'
+    SEEDERS =           '\n<b>» sᴇᴇᴅᴇʀs :</b> <code>{Seeders}</code> | '
+    LEECHERS =                                           '<b>ʟᴇᴇᴄʜᴇʀs :</b> <code>{Leechers}</code>'
 
     ####--------SEEDING----------
-    SEED_SIZE =      '\n↦ <b>Size: </b>{Size}'
-    SEED_SPEED =     '\n↦ <b>Speed: </b> {Speed} | '
-    UPLOADED =                                     '<b>Uploaded: </b> {Upload}'
-    RATIO =          '\n↦ <b>Ratio: </b> {Ratio} | '
-    TIME =                                         '<b>Time: </b> {Time}'
-    SEED_ENGINE =    '\n↦ <b>Engine:</b> {Engine}'
+    SEED_SIZE =      '\n<b>» sɪᴢᴇ : </b><code> {Size}</code>'
+    SEED_SPEED =     '\n<b>» sᴘᴇᴇᴅ : </b> <code>{Speed}</code> | '
+    UPLOADED =                                     '<b>ᴜᴘʟᴏᴀᴅᴇᴅ :</b> <code>{Upload}</code>'
+    RATIO =          '\n<b>» ʀᴀᴛɪᴏ : </b> <code>{Ratio}</code> | '
+    TIME =                                         '<b>ᴛɪᴍᴇ : </b> <code>{Time}</code>'
+    SEED_ENGINE =    '\n<b>» ᴇɴɢɪɴᴇ :</b> <code>{Engine}</code>'
 
     ####--------NON-PROGRESSIVE + NON SEEDING----------
-    STATUS_SIZE =    '\n↦ <b>Size: </b>{Size}'
-    NON_ENGINE =     '\n↦ <b>Engine:</b> {Engine}'
+    STATUS_SIZE =    '\n<b>» sɪᴢᴇ : </b><code> {Size}</code>'
+    NON_ENGINE =     '\n<b>» ᴇɴɢɪɴᴇ :</b> <code>{Engine}</code>'
 
     ####--------OVERALL MSG FOOTER----------
-    USER =              '\n↦ <b>User:</b> <code>{User}</code> | '
-    ID =                                                        '<b>ID:</b> <code>{Id}</code>'
-    BTSEL =          '\n↦ <b>Select:</b> {Btsel}'
-    CANCEL =         '\n↦ {Cancel}\n\n'
+    USER =              '\n<b>» ᴜsᴇʀ :</b> <code>{User}</code> | '
+    ID =                                                        '<b>ɪᴅ :</b> <code>{Id}</code>'
+    BTSEL =          '\n<b>» sᴇʟᴇᴄᴛ :</b> <code>{Btsel}</code>'
+    CANCEL =         '\n<b>» ᴄᴀɴᴄᴇʟ :</b> <code>{Cancel}</code>\n\n'
 
     ####------FOOTER--------
-    FOOTER = '⌬ <b><i>Bot Stats</i></b>\n'
-    TASKS =  '↦ <b>Tasks:</b> {Tasks}\n'
-    BOT_TASKS = '↦ <b>Tasks:</b> {Tasks}/{Ttask} | <b>AVL:</b> {Free}\n'
-    Cpu = '↦ <b>CPU:</b> {cpu}% | '
-    FREE =                      '<b>F:</b> {free} [{free_p}%]'
-    Ram = '\n↦ <b>RAM:</b> {ram}% | '
-    uptime =                     '<b>UPTIME:</b> {uptime}'
-    DL = '\n↦ <b>DL:</b> {DL}/s | '
-    UL =                        '<b>UL:</b> {UL}/s'
-
+    FOOTER = '<u><b>ʙᴏᴛ sᴛᴀᴛs</b></u>\n\n'
+    TASKS =  '<b>» ᴛᴀsᴋs :</b> <code>{Tasks}</code>\n'
+    BOT_TASKS = '<b>» ᴛᴀsᴋs :</b> <code>{Tasks}/{Ttask}</code> | <b>ᴀᴠʟ :</b> <code>{Free}</code>\n'
+    Cpu = '<b>» ᴄᴘᴜ :</b> <code>{cpu}%</code> | '
+    FREE =                      '<b>ғʀᴇᴇ :</b> <code>{free} [{free_p}%]</code>'
+    Ram = '\n<b>» ʀᴀᴍ :</b> <code>{ram}%</code> | '
+    uptime =                     '<b>ᴜᴘᴛɪᴍᴇ :</b> <code>{uptime}</code>'
+    DL = '\n<b>» ᴅʟ :</b> <code>{DL}/s</code> | '
+    UL =                        '<b>ᴜʟ :</b> <code>{UL}/s</code>'
+    
     ###--------BUTTONS-------
-    PREVIOUS = '⫷'
+    PREVIOUS = '⇇ ʙᴀᴄᴋ'
     REFRESH = 'ᴘᴀɢᴇs\n{Page}'
-    NEXT = '⫸'
+    NEXT = 'ɴᴇxᴛ ⇉'
     # ---------------------
 
     #STOP_DUPLICATE_MSG: ---> clone.py, aria2_listener.py, task_manager.py
@@ -253,25 +253,29 @@ class WZMLStyle:
     # ---------------------
 
     # USER Setting --> user_setting.py 
-    USER_SETTING = '''㊂ <b><u>User Settings :</u></b>
+    USER_SETTING = '''<b><u>ᴜsᴇʀ sᴇᴛᴛɪɴɢs</u>
         
-↦<b> Name :</b> {NAME} ( <code>{ID}</code> )
-↦<b> Username :</b> {USERNAME}
-↦<b> Telegram DC :</b> {DC}
-↦<b> Language :</b> {LANG}
+✦ ɴᴀᴍᴇ :</b> {NAME} ( <code>{ID}</code> )
+✦ ᴜsᴇʀ ɴᴀᴍᴇ : {USERNAME}
+✦ ᴛᴇʟᴇɢʀᴀɴ ᴅᴄ : {DC}
+✦ ʟᴀɴɢᴜᴀɢᴇ : {LANG}
 
-⇢ <u><b>Available Args:</b></u>
-⇢ <b>-s</b> or <b>-set</b>: Set Directly via Arg'''
+🫅 ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ ›› <a href='https://t.me/Hari_OP'>ʜᴀʀɪ ᠰ ᴛɢ​</a></b>'''
 
-    UNIVERSAL = '''㊂ <b><u>Universal Settings : {NAME}</u></b>
+    UNIVERSAL = '''<b><u>𝗨𝗡𝗜𝗩𝗘𝗥𝗦𝗔𝗟 𝗦𝗘𝗧𝗧𝗜𝗡𝗚𝗦 : {NAME}</u>
+✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵
 
-↦<b> YT-DLP Options :</b> <b><code>{YT}</code></b>
-↦<b> Daily Tasks :</b> <code>{DT}</code> per day
-↦<b> Last Bot Used :</b> <code>{LAST_USED}</code>
-↦<b> User Session :</b> <code>{USESS}</code>
-↦<b> MediaInfo Mode :</b> <code>{MEDIAINFO}</code>
-↦<b> Save Mode :</b> <code>{SAVE_MODE}</code>
-↦<b> User Bot PM :</b> <code>{BOT_PM}</code>'''
+╔════❰ ꪮꪑᦋ ᥊ ᨶꪶꪮꪊᦔ ❱═❍⊱❁۪۪
+║┏━━━━━━━━━━━━━━━➣
+║┣⪼ 𝓨𝓣-𝓓𝓛𝓟 𝓞𝓹𝓽𝓲𝓸𝓷𝓼  : {YT}
+║┣⪼ 𝓓𝓪𝓵𝓲𝔂 𝓣𝓪𝓼𝓴𝓮 : {DT}
+║┣⪼ 𝓛𝓪𝓼𝓽 𝓑𝓸𝓽 𝓤𝓼𝓮𝓭  : {LAST_USED}
+║┣⪼ 𝓤𝓼𝓮𝓻 𝓢𝓮𝓼𝓼𝓲𝓸𝓷  : {USESS}
+║┣⪼ 𝓜𝓮𝓭𝓲𝓪𝓲𝓷𝓯𝓸 𝓜𝓸𝓭𝓮  : {MEDIAINFO}
+║┣⪼ 𝓢𝓪𝓿𝓮 𝓜𝓸𝓭𝓮  : {SAVE_MODE}
+║┣⪼ 𝓤𝓼𝓮𝓻 𝓑𝓸𝓽 𝓟𝓶  : {BOT_PM}
+║┗━━━━━━━━━━━━━━━➣
+╚══════════════════❍⊱❁</b>'''
 
     MIRROR = '''<b><u>𝗠𝗜𝗥𝗥𝗢𝗥 𝗦𝗘𝗧𝗧𝗜𝗡𝗚𝗦 : {NAME}</u>
 ✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵
@@ -279,13 +283,13 @@ class WZMLStyle:
 
 ╔════❰ ꪮꪑᦋ ᥊ ᨶꪶꪮꪊᦔ ❱═❍⊱❁۪۪
 ║┏━━━━━━━━━━━━━━━➣
-║┣⪼ 𝓡𝓬𝓵𝓸𝓷𝓮 𝓒𝓸𝓷𝓯𝓲𝓰 : {RCLONE}
-║┣⪼ 𝓜𝓲𝓻𝓻𝓸𝓻 𝓟𝓮𝓻𝓯𝓲𝔁 : {MPREFIX}
-║┣⪼ 𝓜𝓲𝓻𝓻𝓸𝓻 𝓢𝓾𝓯𝓯𝓲𝓬 : {MSUFFIX}
-║┣⪼ 𝓜𝓲𝓻𝓻𝓸𝓻 𝓡𝓮𝓶𝓷𝓪𝓶𝓮 : {MREMNAME}
-║┣⪼ 𝓓𝓓𝓛 𝓢𝓮𝓻𝓿𝓮𝓻(𝓢) : {DDL_SERVER}
-║┣⪼ 𝓤𝓼𝓮𝓻 𝓣𝓓 𝓜𝓸𝓭𝓮 : {TMODE}
-║┣⪼ 𝓣𝓸𝓽𝓪𝓵 𝓤𝓼𝓮𝓻 𝓣𝓓(𝓢) : {USERTD}
+║┣⪼ 𝓡𝓬𝓵𝓸𝓷𝓮 𝓒𝓸𝓷𝓯𝓲𝓰  : {RCLONE}
+║┣⪼ 𝓜𝓲𝓻𝓻𝓸𝓻 𝓟𝓮𝓻𝓯𝓲𝔁  : {MPREFIX}
+║┣⪼ 𝓜𝓲𝓻𝓻𝓸𝓻 𝓢𝓾𝓯𝓯𝓲𝓬  : {MSUFFIX}
+║┣⪼ 𝓜𝓲𝓻𝓻𝓸𝓻 𝓡𝓮𝓶𝓷𝓪𝓶𝓮  : {MREMNAME}
+║┣⪼ 𝓓𝓓𝓛 𝓢𝓮𝓻𝓿𝓮𝓻(𝓢)  : {DDL_SERVER}
+║┣⪼ 𝓤𝓼𝓮𝓻 𝓣𝓓 𝓜𝓸𝓭𝓮  : {TMODE}
+║┣⪼ 𝓣𝓸𝓽𝓪𝓵 𝓤𝓼𝓮𝓻 𝓣𝓓(𝓢)  : {USERTD}
 ║┣⪼ 𝓓𝓪𝓲𝓵𝔂 𝓛𝓮𝓮𝓬𝓱  : {DL} ᴘᴇʀ ᴅᴀʏ
 ║┗━━━━━━━━━━━━━━━➣
 ╚══════════════════❍⊱❁</b>'''
