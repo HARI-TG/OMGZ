@@ -159,7 +159,7 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
 
 async def update_user_settings(query, key=None, edit_type=None, edit_mode=None, msg=None, sdirect=False):
     msg, button = await get_user_settings(msg.from_user if sdirect else query.from_user, key, edit_type, edit_mode)
-    await editMessage(query if sdirect else query.message, msg, button)
+    await editMessage(query if sdirect else query.message, msg, button, text)
 
 
 async def user_settings(client, message):
@@ -193,8 +193,8 @@ async def user_settings(client, message):
     else:
         from_user = message.from_user
         handler_dict[from_user.id] = False
-        msg, button = await get_user_settings(from_user)
-        await sendMessage(message, msg, button, 'IMAGES')
+        text, msg, button = await get_user_settings(from_user)
+        await sendMessage(message, msg, text, button, 'IMAGES')
 
 
 async def set_custom(client, message, pre_event, key, direct=False):
