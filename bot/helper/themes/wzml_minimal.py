@@ -284,16 +284,21 @@ class WZMLStyle:
 ↦<b> Total User TD(s) :</b> <i>{USERTD}</i>
 ↦<b> Daily Mirror :</b> <code>{DM}</code> per day'''
 
-    LEECH = '''㊂ <b><u>Leech Settings for {NAME}</u></b>
+    LEECH = '''<b><b><u>𝗟𝗘𝗘𝗖𝗛 𝗦𝗘𝗧𝗧𝗜𝗡𝗚𝗦 - {NAME}</u></b>
+✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵
 
-↦<b> Daily Leech : </b><code>{DL}</code> per day
-↦<b> Leech Type :</b> <i>{LTYPE}</i>
-↦<b> Custom Thumbnail :</b> <i>{THUMB}</i>
-↦<b> Leech Split Size :</b> <code>{SPLIT_SIZE}</code>
-↦<b> Equal Splits :</b> <i>{EQUAL_SPLIT}</i>
-↦<b> Media Group :</b> <i>{MEDIA_GROUP}</i>
-↦<b> Leech Caption :</b> <code>{LCAPTION}</code>
-↦<b> Leech Prefix :</b> <code>{LPREFIX}</code>
-↦<b> Leech Suffix :</b> <code>{LSUFFIX}</code>
-↦<b> Leech Dumps :</b> <code>{LDUMP}</code>
-↦<b> Leech Remname :</b> <code>{LREMNAME}</code>'''
+╔════❰ ꪮꪑᦋ ᥊ ᨶꪶꪮꪊᦔ ❱═❍⊱❁۪۪
+║┏━━━━━━━━━━━━━━━➣
+║┣⪼<b> 𝓓𝓪𝓲𝓵𝔂 𝓛𝓮𝓮𝓬𝓱 : </b><code>{DL}</code> per day
+║┣⪼<b> 𝓛𝓮𝓮𝓬𝓱 𝓣𝔂𝓹𝓮 :</b> <i>{LTYPE}</i>
+║┣⪼<b> 𝓒𝓾𝓼𝓽𝓸𝓶 𝓣𝓱𝓾𝓶𝓫𝓷𝓪𝓲𝓵 :</b> <i>{THUMB}</i>
+║┣⪼<b> 𝓛𝓮𝓮𝓬𝓱 𝓢𝓹𝓵𝓲𝓽 𝓢𝓲𝔃𝓮:</b> <code>{SPLIT_SIZE}</code>
+║┣⪼<b> 𝓔𝓺𝓾𝓪𝓵 𝓢𝓹𝓵𝓲𝓽𝓼 :</b> <i>{EQUAL_SPLIT}</i>
+║┣⪼<b> 𝓜𝓮𝓭𝓲𝓪 𝓖𝓻𝓸𝓾𝓹 :</b> <i>{MEDIA_GROUP}</i>
+║┣⪼<b> 𝓛𝓮𝓮𝓬𝓱 𝓒𝓪𝓹𝓽𝓲𝓸𝓷 :</b> <code>{LCAPTION}</code>
+║┣⪼<b> 𝓛𝓮𝓮𝓬𝓱 𝓟𝓻𝓮𝓯𝓲𝔁 :</b> <code>{LPREFIX}</code>
+║┣⪼<b> 𝓛𝓮𝓮𝓬𝓱 𝓢𝓾𝓯𝓯𝓲𝔁 :</b> <code>{LSUFFIX}</code>
+║┣⪼<b> 𝓛𝓮𝓮𝓬𝓱 𝓓𝓾𝓶𝓹𝓼 :</b> <code>{LDUMP}</code>
+║┣⪼<b> 𝓛𝓮𝓮𝓬𝓱 𝓡𝓮𝓶𝓷𝓪𝓶𝓮 :</b> <code>{LREMNAME}</code>
+║┗━━━━━━━━━━━━━━━➣
+╚══════════════════❍⊱❁</b>'''
