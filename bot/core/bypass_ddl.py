@@ -11,7 +11,7 @@ from uuid import uuid4
 
 from bs4 import BeautifulSoup
 from cloudscraper import create_scraper
-from curl_cffi.requests import Session as cSession
+#from curl_cffi.requests import Session as cSession
 from lxml import etree
 from requests import Session, get as rget
 
