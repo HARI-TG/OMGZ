@@ -80,28 +80,30 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
         
         button = buttons.build_menu(1)
     elif key == 'universal':
-        buttons.ibutton("ʏᴛ-ᴅʟᴘ ᴏᴘᴛɪᴏɴs", f"userset {user_id} yt_opt")
-        ytopt = 'ɴᴏᴛ ᴇxɪsᴛs' if (val:=user_dict.get('yt_opt', config_dict.get('YT_DLP_OPTIONS', ''))) == '' else val
-        bot_pm = "ᴇɴᴀʙʟᴇᴅ" if user_dict.get('bot_pm', config_dict['BOT_PM']) else "ᴅɪsᴀʙʟᴇᴅ"
-        buttons.ibutton('ᴅɪsᴀʙʟᴇ ʙᴏᴛ ᴘᴍ' if bot_pm == 'Enabled' else 'ᴇɴᴀʙʟᴇ ʙᴏᴛ ᴘᴍ', f"userset {user_id} bot_pm")
+        ytopt = 'Not Exists' if (val:=user_dict.get('yt_opt', config_dict.get('YT_DLP_OPTIONS', ''))) == '' else val
+        buttons.ibutton(f"{'✅️' if ytopt != 'Not Exists' else ''} YT-DLP Options", f"userset {user_id} yt_opt")
+        u_sess = 'Exists' if user_dict.get('usess', False) else 'Not Exists'
+        buttons.ibutton(f"{'✅️' if u_sess != 'Not Exists' else ''} User Session", f"userset {user_id} usess")
+        bot_pm = "Enabled" if user_dict.get('bot_pm', config_dict['BOT_PM']) else "Disabled"
+        buttons.ibutton('Disable Bot PM' if bot_pm == 'Enabled' else 'Enable Bot PM', f"userset {user_id} bot_pm")
         if config_dict['BOT_PM']:
             bot_pm = "Force Enabled"
-        mediainfo = "ᴇɴᴀʙʟᴇᴅ" if user_dict.get('mediainfo', config_dict['SHOW_MEDIAINFO']) else "ᴅɪsᴀʙʟᴇᴅ"
-        buttons.ibutton('ᴅɪsᴀʙʟᴇ ᴍᴇᴅɪᴀɪɴғᴏ' if mediainfo == 'Enabled' else 'ᴇɴᴀʙʟᴇ ᴍᴇᴅɪᴀɪɴғᴏ', f"userset {user_id} mediainfo")
+        mediainfo = "Enabled" if user_dict.get('mediainfo', config_dict['SHOW_MEDIAINFO']) else "Disabled"
+        buttons.ibutton('Disable MediaInfo' if mediainfo == 'Enabled' else 'Enable MediaInfo', f"userset {user_id} mediainfo")
         if config_dict['SHOW_MEDIAINFO']:
             mediainfo = "Force Enabled"
-        save_mode = "sᴀᴠᴇ ᴀs ᴅᴜᴍᴘ" if user_dict.get('save_mode') else "sᴀᴠᴇ ʙᴏᴛ ᴘᴍ"
-        buttons.ibutton('sᴀᴠᴇ ʙᴏᴛ ᴘᴍ' if save_mode == 'sᴀᴠᴇ ᴀs ᴅᴜᴍᴘ' else 'sᴀᴠᴇ ᴀs ᴅᴜᴍᴘ', f"userset {user_id} save_mode")
-        dailytl = config_dict['DAILY_TASK_LIMIT'] if config_dict['DAILY_TASK_LIMIT'] else "♾️"
-        dailytas = user_dict.get('dly_tasks')[1] if user_dict and user_dict.get('dly_tasks') and user_id != OWNER_ID and config_dict['DAILY_TASK_LIMIT'] else config_dict.get('DAILY_TASK_LIMIT', "♾️") if user_id != OWNER_ID else "♾️"
+        save_mode = "Save As Dump" if user_dict.get('save_mode') else "Save As BotPM"
+        buttons.ibutton('Save As BotPM' if save_mode == 'Save As Dump' else 'Save As Dump', f"userset {user_id} save_mode")
+        dailytl = config_dict['DAILY_TASK_LIMIT'] or "∞"
+        dailytas = user_dict.get('dly_tasks')[1] if user_dict and user_dict.get('dly_tasks') and user_id != OWNER_ID and config_dict['DAILY_TASK_LIMIT'] else config_dict['DAILY_TASK_LIMIT'] or "️∞" if user_id != OWNER_ID else "∞"
         if user_dict.get('dly_tasks', False):
             t = str(datetime.now() - user_dict['dly_tasks'][0]).split(':')
             lastused = f"{t[0]}h {t[1]}m {t[2].split('.')[0]}s ago"
-        else: lastused = "Bot Not Used"
+        else: lastused = "Bot Not Used yet.."
 
-        text = BotTheme('UNIVERSAL', NAME=name, YT=escape(ytopt), DT=f"{dailytas} / {dailytl}", LAST_USED=lastused, BOT_PM=bot_pm, MEDIAINFO=mediainfo, SAVE_MODE=save_mode)
-        buttons.ibutton("ʙᴀᴄᴋ", f"userset {user_id} back", "footer")
-        buttons.ibutton("ᴄʟᴏsᴇ", f"userset {user_id} close", "footer")
+        text = BotTheme('UNIVERSAL', NAME=name, YT=escape(ytopt), DT=f"{dailytas} / {dailytl}", LAST_USED=lastused, BOT_PM=bot_pm, MEDIAINFO=mediainfo, SAVE_MODE=save_mode, USESS=u_sess)
+        buttons.ibutton("Back", f"userset {user_id} back", "footer")
+        buttons.ibutton("Close", f"userset {user_id} close", "footer")
         button = buttons.build_menu(2)
     elif key == 'mirror':
         buttons.ibutton("ʀᴄʟᴏɴᴇ", f"userset {user_id} rcc")
