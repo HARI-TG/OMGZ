@@ -127,68 +127,16 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
         buttons.ibutton("ʙᴀᴄᴋ", f"userset {user_id} back", "footer")
         buttons.ibutton("ᴄʟᴏsᴇ", f"userset {user_id} close", "footer")
         button = buttons.build_menu(2)
-    elif key == "ddl_servers":
-        ddl_serv, serv_list = 0, []
-        if (ddl_dict := user_dict.get('ddl_servers', False)):
-            for serv, (enabled, _) in ddl_dict.items():
-                if enabled:
-                    serv_list.append(serv)
-                    ddl_serv += 1
-        text = f"㊂ <b><u>{fname_dict[key]} Settings :</u></b>\n\n" \
-               f"➲ <b>Enabled DDL Server(s) :</b> <i>{ddl_serv}</i>\n\n" \
-               f"➲ <b>Description :</b> <i>{desp_dict[key][0]}</i>"
-        for btn in ['gofile', 'streamtape']:
-            buttons.ibutton(f"{'✅️' if btn in serv_list else ''} {fname_dict[btn]}", f"userset {user_id} {btn}")
-        buttons.ibutton("Back", f"userset {user_id} back mirror", "footer")
-        buttons.ibutton("Close", f"userset {user_id} close", "footer")
-        button = buttons.build_menu(2)
     elif edit_type:
         text = f"㊂ <b><u>{fname_dict[key]} Settings :</u></b>\n\n"
-        if key == 'rcc':
-            set_exist = await aiopath.exists(rclone_path)
-            text += f"➲ <b>RClone.Conf File :</b> <i>{'' if set_exist else 'Not'} Exists</i>\n\n"
-        elif key == 'thumb':
+        if key == 'thumb':
             set_exist = await aiopath.exists(thumbpath)
             text += f"➲ <b>Custom Thumbnail :</b> <i>{'' if set_exist else 'Not'} Exists</i>\n\n"
-        elif key == 'yt_opt':
-            set_exist = 'Not Exists' if (val:=user_dict.get('yt_opt', config_dict.get('YT_DLP_OPTIONS', ''))) == '' else val
-            text += f"➲ <b>YT-DLP Options :</b> <code>{escape(set_exist)}</code>\n\n"
-        elif key == 'usess':
-            set_exist = 'Exists' if user_dict.get('usess') else 'Not Exists'
-            text += f"➲ <b>{fname_dict[key]} :</b> <code>{set_exist}</code>\n➲ <b>Encryption :</b> {'🔐' if set_exist else '🔓'}\n\n"
-        elif key == 'split_size':
-            set_exist = get_readable_file_size(config_dict['LEECH_SPLIT_SIZE']) + ' (Default)' if user_dict.get('split_size', '') == '' else get_readable_file_size(user_dict['split_size'])
-            text += f"➲ <b>Leech Split Size :</b> <i>{set_exist}</i>\n\n"
-            if user_dict.get('equal_splits', False) or ('equal_splits' not in user_dict and config_dict['EQUAL_SPLITS']):
-                buttons.ibutton("Disable Equal Splits", f"userset {user_id} esplits", "header")
-            else:
-                buttons.ibutton("Enable Equal Splits", f"userset {user_id} esplits", "header")
-            if user_dict.get('media_group', False) or ('media_group' not in user_dict and config_dict['MEDIA_GROUP']):
-                buttons.ibutton("Disable Media Group", f"userset {user_id} mgroup", "header")
-            else:
-                buttons.ibutton("Enable Media Group", f"userset {user_id} mgroup", "header")
         elif key in ['lprefix', 'lremname', 'lsuffix', 'lcaption', 'ldump']:
             set_exist = 'Not Exists' if (val:=user_dict.get(key, config_dict.get(f'LEECH_FILENAME_{key[1:].upper()}', ''))) == '' else val
             if set_exist != 'Not Exists' and key == "ldump":
                 set_exist = '\n\n' + '\n'.join([f"{index}. <b>{dump}</b> : <code>{ids}</code>" for index, (dump, ids) in enumerate(val.items(), start=1)])
             text += f"➲ <b>Leech Filename {fname_dict[key]} :</b> {set_exist}\n\n"
-        elif key in ['mprefix', 'mremname', 'msuffix']:
-            set_exist = 'Not Exists' if (val:=user_dict.get(key, config_dict.get(f'MIRROR_FILENAME_{key[1:].upper()}', ''))) == '' else val
-            text += f"➲ <b>Mirror Filename {fname_dict[key]} :</b> {set_exist}\n\n"
-        elif key in ['gofile', 'streamtape']:
-            set_exist = 'Exists' if key in (ddl_dict:=user_dict.get('ddl_servers', {})) and ddl_dict[key][1] and ddl_dict[key][1] != '' else 'Not Exists'
-            ddl_mode = 'Enabled' if key in (ddl_dict:=user_dict.get('ddl_servers', {})) and ddl_dict[key][0] else 'Disabled'
-            text = f"➲ <b>Upload {fname_dict[key]} :</b> {ddl_mode}\n" \
-                   f"➲ <b>{fname_dict[key]}'s API Key :</b> {set_exist}\n\n"
-            buttons.ibutton('Disable DDL' if ddl_mode == 'Enabled' else 'Enable DDL', f"userset {user_id} s{key}", "header")
-        elif key == 'user_tds':
-            set_exist = len(val) if (val:=user_dict.get(key, False)) else 'Not Exists'
-            tds_mode = "Enabled" if user_dict.get('td_mode', False) else "Disabled"
-            buttons.ibutton('Disable UserTDs' if tds_mode == 'Enabled' else 'Enable UserTDs', f"userset {user_id} td_mode", "header")
-            if not config_dict['USER_TD_MODE']:
-                tds_mode = "Force Disabled"
-            text += f"➲ <b>User TD Mode :</b> {tds_mode}\n"
-            text += f"➲ <b>{fname_dict[key]} :</b> {set_exist}\n\n"
         else: 
             return
         text += f"➲ <b>Description :</b> <i>{desp_dict[key][0]}</i>"
