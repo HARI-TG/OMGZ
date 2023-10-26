@@ -127,6 +127,7 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
         buttons.ibutton("ʙᴀᴄᴋ", f"userset {user_id} back", "footer")
         buttons.ibutton("ᴄʟᴏsᴇ", f"userset {user_id} close", "footer")
         button = buttons.build_menu(2)
+    return text, button
     elif edit_type:
         text = f"㊂ <b><u>{fname_dict[key]} Settings :</u></b>\n\n"
         if key == 'thumb':
