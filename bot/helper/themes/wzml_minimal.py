@@ -273,32 +273,38 @@ class WZMLStyle:
 ↦<b> Save Mode :</b> <code>{SAVE_MODE}</code>
 ↦<b> User Bot PM :</b> <code>{BOT_PM}</code>'''
 
-    MIRROR = '''㊂ <b><u>Mirror/Clone Settings : {NAME}</u></b>
+    MIRROR = '''<b><u>𝗠𝗜𝗥𝗥𝗢𝗥 𝗦𝗘𝗧𝗧𝗜𝗡𝗚𝗦 : {NAME}</u>
+✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵
 
-↦<b> RClone Config :</b> <i>{RCLONE}</i>
-↦<b> Mirror Prefix :</b> <code>{MPREFIX}</code>
-↦<b> Mirror Suffix :</b> <code>{MSUFFIX}</code>
-↦<b> Mirror Remname :</b> <code>{MREMNAME}</code>
-↦<b> DDL Server(s) :</b> <i>{DDL_SERVER}</i>
-↦<b> User TD Mode :</b> <i>{TMODE}</i>
-↦<b> Total User TD(s) :</b> <i>{USERTD}</i>
-↦<b> Daily Mirror :</b> <code>{DM}</code> per day'''
+
+╔════❰ ꪮꪑᦋ ᥊ ᨶꪶꪮꪊᦔ ❱═❍⊱❁۪۪
+║┏━━━━━━━━━━━━━━━➣
+║┣⪼ 𝓡𝓬𝓵𝓸𝓷𝓮 𝓒𝓸𝓷𝓯𝓲𝓰 : {RCLONE}
+║┣⪼ 𝓜𝓲𝓻𝓻𝓸𝓻 𝓟𝓮𝓻𝓯𝓲𝔁 : {MPREFIX}
+║┣⪼ 𝓜𝓲𝓻𝓻𝓸𝓻 𝓢𝓾𝓯𝓯𝓲𝓬 : {MSUFFIX}
+║┣⪼ 𝓜𝓲𝓻𝓻𝓸𝓻 𝓡𝓮𝓶𝓷𝓪𝓶𝓮 : {MREMNAME}
+║┣⪼ 𝓓𝓓𝓛 𝓢𝓮𝓻𝓿𝓮𝓻(𝓢) : {DDL_SERVER}
+║┣⪼ 𝓤𝓼𝓮𝓻 𝓣𝓓 𝓜𝓸𝓭𝓮 : {TMODE}
+║┣⪼ 𝓣𝓸𝓽𝓪𝓵 𝓤𝓼𝓮𝓻 𝓣𝓓(𝓢) : {USERTD}
+║┣⪼ 𝓓𝓪𝓲𝓵𝔂 𝓛𝓮𝓮𝓬𝓱  : {DL} ᴘᴇʀ ᴅᴀʏ
+║┗━━━━━━━━━━━━━━━➣
+╚══════════════════❍⊱❁</b>'''
 
     LEECH = '''<b><b><u>𝗟𝗘𝗘𝗖𝗛 𝗦𝗘𝗧𝗧𝗜𝗡𝗚𝗦 - {NAME}</u></b>
 ✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵✵
 
 ╔════❰ ꪮꪑᦋ ᥊ ᨶꪶꪮꪊᦔ ❱═❍⊱❁۪۪
 ║┏━━━━━━━━━━━━━━━➣
-║┣⪼<b> 𝓓𝓪𝓲𝓵𝔂 𝓛𝓮𝓮𝓬𝓱 : </b><code>{DL}</code> per day
-║┣⪼<b> 𝓛𝓮𝓮𝓬𝓱 𝓣𝔂𝓹𝓮 :</b> <i>{LTYPE}</i>
-║┣⪼<b> 𝓒𝓾𝓼𝓽𝓸𝓶 𝓣𝓱𝓾𝓶𝓫𝓷𝓪𝓲𝓵 :</b> <i>{THUMB}</i>
-║┣⪼<b> 𝓛𝓮𝓮𝓬𝓱 𝓢𝓹𝓵𝓲𝓽 𝓢𝓲𝔃𝓮:</b> <code>{SPLIT_SIZE}</code>
-║┣⪼<b> 𝓔𝓺𝓾𝓪𝓵 𝓢𝓹𝓵𝓲𝓽𝓼 :</b> <i>{EQUAL_SPLIT}</i>
-║┣⪼<b> 𝓜𝓮𝓭𝓲𝓪 𝓖𝓻𝓸𝓾𝓹 :</b> <i>{MEDIA_GROUP}</i>
-║┣⪼<b> 𝓛𝓮𝓮𝓬𝓱 𝓒𝓪𝓹𝓽𝓲𝓸𝓷 :</b> <code>{LCAPTION}</code>
-║┣⪼<b> 𝓛𝓮𝓮𝓬𝓱 𝓟𝓻𝓮𝓯𝓲𝔁 :</b> <code>{LPREFIX}</code>
-║┣⪼<b> 𝓛𝓮𝓮𝓬𝓱 𝓢𝓾𝓯𝓯𝓲𝔁 :</b> <code>{LSUFFIX}</code>
-║┣⪼<b> 𝓛𝓮𝓮𝓬𝓱 𝓓𝓾𝓶𝓹𝓼 :</b> <code>{LDUMP}</code>
-║┣⪼<b> 𝓛𝓮𝓮𝓬𝓱 𝓡𝓮𝓶𝓷𝓪𝓶𝓮 :</b> <code>{LREMNAME}</code>
+║┣⪼ 𝓓𝓪𝓲𝓵𝔂 𝓛𝓮𝓮𝓬𝓱  : {DL} ᴘᴇʀ ᴅᴀʏ
+║┣⪼ 𝓛𝓮𝓮𝓬𝓱 𝓣𝔂𝓹𝓮  : {LTYPE} 
+║┣⪼ 𝓒𝓾𝓼𝓽𝓸𝓶 𝓣𝓱𝓾𝓶𝓫𝓷𝓪𝓲𝓵  : {THUMB}
+║┣⪼ 𝓛𝓮𝓮𝓬𝓱 𝓢𝓹𝓵𝓲𝓽 𝓢𝓲𝔃𝓮  : {SPLIT_SIZE}
+║┣⪼ 𝓔𝓺𝓾𝓪𝓵 𝓢𝓹𝓵𝓲𝓽𝓼  : {EQUAL_SPLIT}
+║┣⪼ 𝓜𝓮𝓭𝓲𝓪 𝓖𝓻𝓸𝓾𝓹  : {MEDIA_GROUP}
+║┣⪼ 𝓛𝓮𝓮𝓬𝓱 𝓒𝓪𝓹𝓽𝓲𝓸𝓷  : {LCAPTION}
+║┣⪼ 𝓛𝓮𝓮𝓬𝓱 𝓟𝓻𝓮𝓯𝓲𝔁  : {LPREFIX}
+║┣⪼ 𝓛𝓮𝓮𝓬𝓱 𝓢𝓾𝓯𝓯𝓲𝔁  : {LSUFFIX}
+║┣⪼ 𝓛𝓮𝓮𝓬𝓱 𝓓𝓾𝓶𝓹𝓼  : {LDUMP}
+║┣⪼ 𝓛𝓮𝓮𝓬𝓱 𝓡𝓮𝓶𝓷𝓪𝓶𝓮  : {LREMNAME}
 ║┗━━━━━━━━━━━━━━━➣
 ╚══════════════════❍⊱❁</b>'''
