@@ -255,7 +255,7 @@ class WZMLStyle:
     # USER Setting --> user_setting.py 
     USER_SETTING = '''<b><u>ᴜsᴇʀ sᴇᴛᴛɪɴɢs</u>
         
-✦ ɴᴀᴍᴇ :</b> {NAME} ( <code>{ID}</code> )
+✦ ɴᴀᴍᴇ : {NAME} ( <code>{ID}</code> )
 ✦ ᴜsᴇʀ ɴᴀᴍᴇ : {USERNAME}
 ✦ ᴛᴇʟᴇɢʀᴀɴ ᴅᴄ : {DC}
 ✦ ʟᴀɴɢᴜᴀɢᴇ : {LANG}
