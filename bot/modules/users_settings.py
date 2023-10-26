@@ -154,12 +154,12 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
         buttons.ibutton("Back", f"userset {user_id} back {edit_type}", "footer")
         buttons.ibutton("Close", f"userset {user_id} close", "footer")
         button = buttons.build_menu(2)
-    return text, button
+    #return text, button
 
 
 async def update_user_settings(query, key=None, edit_type=None, edit_mode=None, msg=None, sdirect=False):
     msg, button = await get_user_settings(msg.from_user if sdirect else query.from_user, key, edit_type, edit_mode)
-    await editMessage(query if sdirect else query.message, msg, button, text)
+    await editMessage(query if sdirect else query.message, msg, button)
 
 
 async def user_settings(client, message):
@@ -193,8 +193,8 @@ async def user_settings(client, message):
     else:
         from_user = message.from_user
         handler_dict[from_user.id] = False
-        text, msg, button = await get_user_settings(from_user)
-        await sendMessage(message, msg, text, button, 'IMAGES')
+        msg, button = await get_user_settings(from_user)
+        await sendMessage(message, msg, button, 'IMAGES')
 
 
 async def set_custom(client, message, pre_event, key, direct=False):
