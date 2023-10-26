@@ -106,34 +106,34 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
         buttons.ibutton("Close", f"userset {user_id} close", "footer")
         button = buttons.build_menu(2)
     elif key == 'mirror':
-        buttons.ibutton("ʀᴄʟᴏɴᴇ", f"userset {user_id} rcc")
-        rccmsg = "ᴇxɪsᴛs" if await aiopath.exists(rclone_path) else "ɴᴏᴛ ᴇxɪsᴛs"
+        buttons.ibutton("RClone", f"userset {user_id} rcc")
+        rccmsg = "Exists" if await aiopath.exists(rclone_path) else "Not Exists"
         dailytlup = get_readable_file_size(config_dict['DAILY_MIRROR_LIMIT'] * 1024**3) if config_dict['DAILY_MIRROR_LIMIT'] else "∞"
         dailyup = get_readable_file_size(await getdailytasks(user_id, check_mirror=True)) if config_dict['DAILY_MIRROR_LIMIT'] and user_id != OWNER_ID else "️∞"
-        buttons.ibutton("ᴍɪʀʀᴏʀ ᴘʀᴇғɪx", f"userset {user_id} mprefix")
-        mprefix = 'ɴᴏᴛ ᴇxɪsᴛs' if (val:=user_dict.get('mprefix', config_dict.get('MIRROR_FILENAME_PREFIX', ''))) == '' else val
+        buttons.ibutton("Mirror Prefix", f"userset {user_id} mprefix")
+        mprefix = 'Not Exists' if (val:=user_dict.get('mprefix', config_dict.get('MIRROR_FILENAME_PREFIX', ''))) == '' else val
 
-        buttons.ibutton("ᴍɪʀʀᴏʀ sᴜғғɪx", f"userset {user_id} msuffix")
-        msuffix = 'ɴᴏᴛ ᴇxɪsᴛs' if (val:=user_dict.get('msuffix', config_dict.get('MIRROR_FILENAME_SUFFIX', ''))) == '' else val
+        buttons.ibutton("Mirror Suffix", f"userset {user_id} msuffix")
+        msuffix = 'Not Exists' if (val:=user_dict.get('msuffix', config_dict.get('MIRROR_FILENAME_SUFFIX', ''))) == '' else val
             
-        buttons.ibutton("ᴍɪʀʀᴏʀ ʀᴇᴍɴᴀᴍᴇ", f"userset {user_id} mremname")
-        mremname = 'ɴᴏᴛ ᴇxɪsᴛs' if (val:=user_dict.get('mremname', config_dict.get('MIRROR_FILENAME_REMNAME', ''))) == '' else val
+        buttons.ibutton("Mirror Remname", f"userset {user_id} mremname")
+        mremname = 'Not Exists' if (val:=user_dict.get('mremname', config_dict.get('MIRROR_FILENAME_REMNAME', ''))) == '' else val
 
         ddl_serv = len(val) if (val := user_dict.get('ddl_servers', False)) else 0
-        buttons.ibutton("ᴅᴅʟ sᴇʀᴠᴇʀs", f"userset {user_id} ddl_servers")
+        buttons.ibutton("DDL Servers", f"userset {user_id} ddl_servers")
         
-        tds_mode = "ᴇɴᴀʙʟᴇᴅ" if user_dict.get('td_mode', config_dict['BOT_PM']) else "ᴅɪsᴀʙʟᴇᴅ"
+        tds_mode = "Enabled" if user_dict.get('td_mode', False) else "Disabled"
         if not config_dict['USER_TD_MODE']:
             tds_mode = "Force Disabled"
         
         user_tds = len(val) if (val := user_dict.get('user_tds', False)) else 0
-        buttons.ibutton("ᴜsᴇʀ ᴛᴅs", f"userset {user_id} user_tds")
+        buttons.ibutton("User TDs", f"userset {user_id} user_tds")
 
         text = BotTheme('MIRROR', NAME=name, RCLONE=rccmsg, DDL_SERVER=ddl_serv, DM=f"{dailyup} / {dailytlup}", MREMNAME=escape(mremname), MPREFIX=escape(mprefix),
                 MSUFFIX=escape(msuffix), TMODE=tds_mode, USERTD=user_tds)
         
-        buttons.ibutton("ʙᴀᴄᴋ", f"userset {user_id} back", "footer")
-        buttons.ibutton("ᴄʟᴏsᴇ", f"userset {user_id} close", "footer")
+        buttons.ibutton("Back", f"userset {user_id} back", "footer")
+        buttons.ibutton("Close", f"userset {user_id} close", "footer")
         button = buttons.build_menu(2)
     elif key == 'leech':
         if user_dict.get('as_doc', False) or 'as_doc' not in user_dict and config_dict['AS_DOCUMENT']:
