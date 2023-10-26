@@ -68,7 +68,7 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
     thumbpath = f"Thumbnails/{user_id}.jpg"
     rclone_path = f'rclone/{user_id}.conf'
     user_dict = user_data.get(user_id, {})
-    if key is None:
+    """if key is None:
         buttons.ibutton("ᴜɴɪᴠᴇʀsᴀʟ sᴇᴛᴛɪɴɢs", f"userset {user_id} universal")
         buttons.ibutton("ᴍɪʀʀᴏʀ sᴇᴛᴛɪɴɢs", f"userset {user_id} mirror")
         buttons.ibutton("ʟᴇᴇᴄʜ sᴇᴛᴛɪɴɢs", f"userset {user_id} leech")
@@ -78,64 +78,9 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
 
         text = BotTheme('USER_SETTING', NAME=name, ID=user_id, USERNAME=f'@{from_user.username}', LANG=Language.get(lc).display_name() if (lc := from_user.language_code) else "N/A", DC=from_user.dc_id)
         
-        button = buttons.build_menu(1)
-    elif key == 'universal':
-        ytopt = 'Not Exists' if (val:=user_dict.get('yt_opt', config_dict.get('YT_DLP_OPTIONS', ''))) == '' else val
-        buttons.ibutton(f"{'✅️' if ytopt != 'Not Exists' else ''} YT-DLP Options", f"userset {user_id} yt_opt")
-        u_sess = 'Exists' if user_dict.get('usess', False) else 'Not Exists'
-        buttons.ibutton(f"{'✅️' if u_sess != 'Not Exists' else ''} User Session", f"userset {user_id} usess")
-        bot_pm = "Enabled" if user_dict.get('bot_pm', config_dict['BOT_PM']) else "Disabled"
-        buttons.ibutton('Disable Bot PM' if bot_pm == 'Enabled' else 'Enable Bot PM', f"userset {user_id} bot_pm")
-        if config_dict['BOT_PM']:
-            bot_pm = "Force Enabled"
-        mediainfo = "Enabled" if user_dict.get('mediainfo', config_dict['SHOW_MEDIAINFO']) else "Disabled"
-        buttons.ibutton('Disable MediaInfo' if mediainfo == 'Enabled' else 'Enable MediaInfo', f"userset {user_id} mediainfo")
-        if config_dict['SHOW_MEDIAINFO']:
-            mediainfo = "Force Enabled"
-        save_mode = "Save As Dump" if user_dict.get('save_mode') else "Save As BotPM"
-        buttons.ibutton('Save As BotPM' if save_mode == 'Save As Dump' else 'Save As Dump', f"userset {user_id} save_mode")
-        dailytl = config_dict['DAILY_TASK_LIMIT'] or "∞"
-        dailytas = user_dict.get('dly_tasks')[1] if user_dict and user_dict.get('dly_tasks') and user_id != OWNER_ID and config_dict['DAILY_TASK_LIMIT'] else config_dict['DAILY_TASK_LIMIT'] or "️∞" if user_id != OWNER_ID else "∞"
-        if user_dict.get('dly_tasks', False):
-            t = str(datetime.now() - user_dict['dly_tasks'][0]).split(':')
-            lastused = f"{t[0]}h {t[1]}m {t[2].split('.')[0]}s ago"
-        else: lastused = "Bot Not Used yet.."
-
-        text = BotTheme('UNIVERSAL', NAME=name, YT=escape(ytopt), DT=f"{dailytas} / {dailytl}", LAST_USED=lastused, BOT_PM=bot_pm, MEDIAINFO=mediainfo, SAVE_MODE=save_mode, USESS=u_sess)
-        buttons.ibutton("Back", f"userset {user_id} back", "footer")
-        buttons.ibutton("Close", f"userset {user_id} close", "footer")
-        button = buttons.build_menu(2)
-    elif key == 'mirror':
-        buttons.ibutton("RClone", f"userset {user_id} rcc")
-        rccmsg = "Exists" if await aiopath.exists(rclone_path) else "Not Exists"
-        dailytlup = get_readable_file_size(config_dict['DAILY_MIRROR_LIMIT'] * 1024**3) if config_dict['DAILY_MIRROR_LIMIT'] else "∞"
-        dailyup = get_readable_file_size(await getdailytasks(user_id, check_mirror=True)) if config_dict['DAILY_MIRROR_LIMIT'] and user_id != OWNER_ID else "️∞"
-        buttons.ibutton("Mirror Prefix", f"userset {user_id} mprefix")
-        mprefix = 'Not Exists' if (val:=user_dict.get('mprefix', config_dict.get('MIRROR_FILENAME_PREFIX', ''))) == '' else val
-
-        buttons.ibutton("Mirror Suffix", f"userset {user_id} msuffix")
-        msuffix = 'Not Exists' if (val:=user_dict.get('msuffix', config_dict.get('MIRROR_FILENAME_SUFFIX', ''))) == '' else val
-            
-        buttons.ibutton("Mirror Remname", f"userset {user_id} mremname")
-        mremname = 'Not Exists' if (val:=user_dict.get('mremname', config_dict.get('MIRROR_FILENAME_REMNAME', ''))) == '' else val
-
-        ddl_serv = len(val) if (val := user_dict.get('ddl_servers', False)) else 0
-        buttons.ibutton("DDL Servers", f"userset {user_id} ddl_servers")
-        
-        tds_mode = "Enabled" if user_dict.get('td_mode', False) else "Disabled"
-        if not config_dict['USER_TD_MODE']:
-            tds_mode = "Force Disabled"
-        
-        user_tds = len(val) if (val := user_dict.get('user_tds', False)) else 0
-        buttons.ibutton("User TDs", f"userset {user_id} user_tds")
-
-        text = BotTheme('MIRROR', NAME=name, RCLONE=rccmsg, DDL_SERVER=ddl_serv, DM=f"{dailyup} / {dailytlup}", MREMNAME=escape(mremname), MPREFIX=escape(mprefix),
-                MSUFFIX=escape(msuffix), TMODE=tds_mode, USERTD=user_tds)
-        
-        buttons.ibutton("Back", f"userset {user_id} back", "footer")
-        buttons.ibutton("Close", f"userset {user_id} close", "footer")
-        button = buttons.build_menu(2)
-    elif key == 'leech':
+        button = buttons.build_menu(1)"""
+    
+    if key == 'leech':
         if user_dict.get('as_doc', False) or 'as_doc' not in user_dict and config_dict['AS_DOCUMENT']:
             ltype = "ᴅᴏᴄᴜᴍᴇɴᴛ"
             buttons.ibutton("sᴇɴᴅ ᴀs ᴍᴇᴅɪᴀ", f"userset {user_id} doc")
@@ -168,6 +113,10 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
 
         buttons.ibutton("ʟᴇᴇᴄʜ ᴅᴜᴍᴘ", f"userset {user_id} ldump")
         ldump = 'ɴᴏᴛ ᴇxɪsᴛs' if (val:=user_dict.get('ldump', '')) == '' else len(val)
+
+
+        if user_dict and any(key in user_dict for key in list(fname_dict.keys())):
+            buttons.ibutton("ʀᴇsᴇᴛ sᴇᴛᴛɪɴɢs", f"userset {user_id} reset_all")
 
         text = BotTheme('LEECH', NAME=name, DL=f"{dailyll} / {dailytlle}",
                 LTYPE=ltype, THUMB=thumbmsg, SPLIT_SIZE=split_size,
